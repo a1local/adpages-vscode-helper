@@ -1,0 +1,73 @@
+{
+  "name": "adpages-helper",
+  "displayName": "AdPages Helper",
+  "description": "Lightweight local marketing helpers for UTM URLs, Google Ads copy checks, and LocalBusiness schema snippets.",
+  "version": "0.1.0",
+  "publisher": "a1local",
+  "license": "MIT",
+  "private": false,
+  "icon": "icon.png",
+  "homepage": "https://a1local.com.au/extensions/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a1local/adpages-vscode-helper.git"
+  },
+  "bugs": {
+    "url": "https://a1local.com.au/extensions/support/"
+  },
+  "funding": {
+    "type": "custom",
+    "url": "https://a1local.com.au/extensions/"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets"
+  ],
+  "keywords": [
+    "utm",
+    "google ads",
+    "local business",
+    "schema",
+    "marketing"
+  ],
+  "activationEvents": [
+    "onCommand:adpagesHelper.buildUtmUrl",
+    "onCommand:adpagesHelper.checkGoogleAdsCopy",
+    "onCommand:adpagesHelper.generateLocalBusinessSchema"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "adpagesHelper.buildUtmUrl",
+        "title": "AdPages: Build UTM URL",
+        "category": "AdPages"
+      },
+      {
+        "command": "adpagesHelper.checkGoogleAdsCopy",
+        "title": "AdPages: Check Google Ads Copy Length",
+        "category": "AdPages"
+      },
+      {
+        "command": "adpagesHelper.generateLocalBusinessSchema",
+        "title": "AdPages: Generate LocalBusiness Schema",
+        "category": "AdPages"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile",
+    "package:vsix": "npx @vscode/vsce package",
+    "publish:marketplace": "npx @vscode/vsce publish",
+    "publish:open-vsx": "npx ovsx publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.5.4"
+  }
+}
